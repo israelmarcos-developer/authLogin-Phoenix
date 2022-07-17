@@ -30,7 +30,7 @@ end
 
 def authenticate_user(email, password) do
   with {:ok, user} <- get_by_email(email) do
-    case validade_password(password, user.password) do
+    case validate_password(password, user.password) do
       false -> {:error, :unauthorized}
       true -> {:ok, user}
     end

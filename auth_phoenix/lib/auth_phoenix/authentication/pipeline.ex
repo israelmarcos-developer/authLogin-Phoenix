@@ -6,7 +6,7 @@ defmodule AuthPhoenix.Guardian.AuthPipeline do
       module: AuthPhoenix.Guardian,
       error_handler: AuthPhoenix.Guardian.AuthErrorHandler
 
-    Plug Guardian.Plug.VerifyHeader, claims: @claim, realm: "Bearer" 
-    Plug Guardian.Plug.EnsureAuthenticated 
-    Plug Guardian.Plug.LoadResource, ensure: true
+    plug Guardian.Plug.VerifyHeader, claims: @claim, realm: "Bearer" 
+    plug Guardian.Plug.EnsureAuthenticated 
+    plug Guardian.Plug.LoadResource, ensure: true
 end

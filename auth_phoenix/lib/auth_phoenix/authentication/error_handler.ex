@@ -1,10 +1,10 @@
 defmodule AuthPhoenix.Guardian.AuthErrorHandler do
-    import Plug.conn
+    import Plug.Conn
 
     @behaviour Guardian.Plug.ErrorHandler
     
     @impl Guardian.Plug.ErrorHandler
-
+    @spec auth_error(Plug.Conn.t(), {any,any},any) :: Plug.Conn.t()
     def auth_error(conn, {type, _reason}, _opts) do
         body = Jason.encode!(%{error: to_string(type)})
 

@@ -1,24 +1,32 @@
 defmodule AuthPhoenixWeb.Router do
   use AuthPhoenixWeb, :router
 
+  pipeline :internal do
+      plug CORSPlug, origin: "*",
+      allow_headers: :all,
+      allow_methods: :all,
+      allow_credentials: true
+
+    end
+
   pipeline :api do
     plug :accepts, ["json"]
-  end
+end
 
   pipeline :auth do
     plug AuthPhoenix.Guardian.AuthPipeline
   end
 
   scope "/api", AuthPhoenixWeb do
-    pipe_through :api
-
+    pipe_through [:api, :internal]
 
     post "/users", UserController, :register
     post "/session/new", SessionController, :new
   end
 
   scope "/api", AuthPhoenixWeb do
-    pipe_through [:api, :auth]
+    pipe_through [:api, :auth, :internal]
+
 
     post "/session/refresh", SessionController, :refresh
     post "/session/delete", SessionController, :delete

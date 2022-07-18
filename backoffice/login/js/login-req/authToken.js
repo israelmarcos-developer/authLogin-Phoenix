@@ -12,7 +12,7 @@ function authLogin(){
         window.localStorage.setItem('acessToken', response.token)
         window.localStorage.setItem('user', response)
         if (window.localStorage.getItem('acessToken', response.token)){
-            window.location.href = "/"
+            window.location.href = "/backoffice"
         }else{
             window.location.href = "/login"
         }

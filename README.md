@@ -8,7 +8,7 @@
 
 ## 🚀 Tecnologias
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
 - Elixir
 - Phoenix
@@ -18,14 +18,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Esse projeto foi construído para autenticar os usuários cadastrados na plataforma. Foi implementado o guardianJWT
-para garantir a autenticidade e segurança dos dados no processo de login.
+This project was built to authenticate users registered on the platform. GuardianJWT has been implemented
+to ensure the authenticity and security of data in the login process.
 
-## Como utilizar?
+## How to use?
 
-1. Baixe esse repositório e com o seu o terminal, entre no diretório auth_phoenix e execute os passos descritos no README
+1. Download this repository and with your terminal, enter the auth_phoenix directory and perform the steps described in the README
 
-2. No diratório backoffice/login Execute index.html em LiveServer
+2. In the backoffice/login directory Run index.html in LiveServer
 
 
 ## :memo: Licença

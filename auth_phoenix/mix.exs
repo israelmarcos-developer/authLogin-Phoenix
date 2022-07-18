@@ -20,7 +20,7 @@ defmodule AuthPhoenix.MixProject do
   def application do
     [
       mod: {AuthPhoenix.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :cors_plug]
     ]
   end
 
@@ -46,7 +46,8 @@ defmodule AuthPhoenix.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:bcrypt_elixir, "~> 2.0"},
-      {:guardian, "~> 2.0"}
+      {:guardian, "~> 2.0"},
+      {:cors_plug, "~> 3.0"},
     ]
   end
 

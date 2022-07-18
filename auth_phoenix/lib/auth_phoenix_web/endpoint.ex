@@ -45,4 +45,12 @@ defmodule AuthPhoenixWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug AuthPhoenixWeb.Router
+
+  plug CORSPlug,
+    origin: "http://localhost:4000", 
+    allow_headers: :all,
+    allow_methods: :all,
+    allow_credentials: true
+
+  plug AuthPhoenixWeb.Router
 end
